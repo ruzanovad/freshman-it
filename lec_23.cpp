@@ -1,4 +1,4 @@
-// стек на основе односвязного списка
+// Г±ГІГҐГЄ Г­Г  Г®Г±Г­Г®ГўГҐ Г®Г¤Г­Г®Г±ГўГїГ§Г­Г®ГЈГ® Г±ГЇГЁГ±ГЄГ 
 #include <iostream>
 
 struct Node
@@ -11,16 +11,16 @@ class StackList
 {
 	private:
 		Node* top_ptr;
-		int error; //0 все в порядке,1 - нехватка памяти, 2 - удаление из пустого
+		int error; //0 ГўГ±ГҐ Гў ГЇГ®Г°ГїГ¤ГЄГҐ,1 - Г­ГҐГµГўГ ГІГЄГ  ГЇГ Г¬ГїГІГЁ, 2 - ГіГ¤Г Г«ГҐГ­ГЁГҐ ГЁГ§ ГЇГіГ±ГІГ®ГЈГ®
 
 	public:
 		StackList();
 		StackList(const StackList&);
 		~StackList();
 
-		double top(); // посмотреть вершину
-		void pop(); // удалить вершину
-		void push(double); //положить
+		double top(); // ГЇГ®Г±Г¬Г®ГІГ°ГҐГІГј ГўГҐГ°ГёГЁГ­Гі
+		void pop(); // ГіГ¤Г Г«ГЁГІГј ГўГҐГ°ГёГЁГ­Гі
+		void push(double); //ГЇГ®Г«Г®Г¦ГЁГІГј
 		bool empty();
 
 		void makeEmpty();
@@ -31,7 +31,7 @@ StackList::StackList()
 {
 	top_ptr = nullptr;
 	error = 0;
-	std::cout << "Это конструктор по умолчанию\n";
+	std::cout << "ГќГІГ® ГЄГ®Г­Г±ГІГ°ГіГЄГІГ®Г° ГЇГ® ГіГ¬Г®Г«Г·Г Г­ГЁГѕ\n";
 }
 
 bool StackList::empty()
