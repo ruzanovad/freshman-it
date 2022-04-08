@@ -32,9 +32,12 @@ int main()
 
 	int h[] = { 5, 3, 1 };
 
-	/*BubbleSort(arr, n);*/
-	/*ShellSort(arr, n, h, 3);*/
-	QuickSort(arr, 0, n - 1);
+//	InsertionSort(arr, n);
+//  InsertionSortBinary(arr, n);
+//  SelectionSort(arr, n);
+//	BubbleSort(arr, n);
+	ShellSort(arr, n, h, 3);
+//	QuickSort(arr, 0, n - 1);
 
 	for (int i = 0; i < n; i++) cout << arr[i].data << " " << arr[i].key << endl;
 
@@ -46,7 +49,7 @@ int main()
 
 
 // устойчивая
-void InsertionSort(Data* arr, int n) 
+void InsertionSort(Data* arr, int n)
 {
 	Data current;
 	int j;
@@ -71,7 +74,7 @@ void ShellSort(Data* arr, int n, int h[], int m) // усовершенствов
 	Data current;
 	int j, k;
 
-	for (int t = 0; t < n; t++)
+	for (int t = 0; t < m; t++)
 	{
 		k = h[t];
 		for (int i = k; i < n; i++)
@@ -89,7 +92,7 @@ void ShellSort(Data* arr, int n, int h[], int m) // усовершенствов
 }
 
 // неустойчивая сортировка
-void SelectionSort(Data* arr, int n) 
+void SelectionSort(Data* arr, int n)
 {
 	Data curr_min;
 	int ind_min;
@@ -112,7 +115,7 @@ void SelectionSort(Data* arr, int n)
 }
 
 // устойчивая сортировка
-void BubbleSort(Data* arr, int n) 
+void BubbleSort(Data* arr, int n)
 {
 	Data tmp;
 	for (int i = 0; i < n; i++)
@@ -171,5 +174,5 @@ void QuickSort(Data* arr, int l, int r)
 		}
 	}
 	if (l < j) QuickSort(arr, l, j);
-	if (i > r) QuickSort(arr, i, r);
+	if (i < r) QuickSort(arr, i, r);
 }

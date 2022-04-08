@@ -1,4 +1,4 @@
-// ñòåê íà îñíîâå îäíîñâÿçíîãî ñïèñêà
+// стек на основе односвязного списка
 #include <iostream>
 
 struct Node
@@ -11,16 +11,16 @@ class StackList
 {
 	private:
 		Node* top_ptr;
-		int error; //0 âñå â ïîðÿäêå,1 - íåõâàòêà ïàìÿòè, 2 - óäàëåíèå èç ïóñòîãî
+		int error; //0 все в порядке,1 - нехватка памяти, 2 - удаление из пустого
 
 	public:
 		StackList();
 		StackList(const StackList&);
 		~StackList();
 
-		double top(); // ïîñìîòðåòü âåðøèíó
-		void pop(); // óäàëèòü âåðøèíó
-		void push(double); //ïîëîæèòü
+		double top(); // посмотреть вершину
+		void pop(); // удалить вершину
+		void push(double); //положить
 		bool empty();
 
 		void makeEmpty();
@@ -31,7 +31,7 @@ StackList::StackList()
 {
 	top_ptr = nullptr;
 	error = 0;
-	std::cout << "Ýòî êîíñòðóêòîð ïî óìîë÷àíèþ\n";
+	std::cout << "Это конструктор по умолчанию\n";
 }
 
 bool StackList::empty()
@@ -65,7 +65,6 @@ void StackList::push(double x)
 		top_ptr = tmp;
 		std::cout << "push\n";
 	}
-
 }
 
 void print(const StackList &st)
@@ -81,7 +80,6 @@ void print(const StackList &st)
 		}
 		std::cout << "\n";
 	}
-	
 }
 
 void StackList::pop()
@@ -104,7 +102,7 @@ StackList::~StackList()
 	//Node* tmp = top_ptr;
 	//while (tmp->next != nullptr)
 	//{
-	//	delete 
+	//	delete
 	//}
 }
 

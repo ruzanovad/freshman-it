@@ -26,7 +26,9 @@ int main()
 
 	for (int i = 0; i < n; i++) fin >> arr[i].data >> arr[i].key;
 
-	BubbleSort(arr, n);
+//    InsertionSort(arr, n);
+    SelectionSort(arr, n);
+//	BubbleSort(arr, n);
 
 	for (int i = 0; i < n; i++) cout << arr[i].data << " " << arr[i].key << endl;
 
@@ -36,7 +38,7 @@ int main()
 	return 0;
 }
 
-void InsertionSort(Data* arr, int n) // устойчивая 
+void InsertionSort(Data* arr, int n) // устойчивая
 {
 	Data current;
 	int j;
