@@ -99,11 +99,14 @@ void StackList::pop()
 
 StackList::~StackList()
 {
-	//Node* tmp = top_ptr;
-	//while (tmp->next != nullptr)
-	//{
-	//	delete
-	//}
+	Node* tmp = top_ptr;
+	while (tmp->next != nullptr)
+	{
+		Node* next = tmp->next;
+		delete tmp;
+		tmp = next;
+	}
+	top_ptr = nullptr;
 }
 
 int main()
